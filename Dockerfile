@@ -36,7 +36,7 @@ RUN DEBIAN_FRONTEND=noninteractive && apt-get update && \
 	mkdir /var/www/html/public && \
 	mv /var/www/html/*.html /var/www/html/public && \
 	sed -i "s/DocumentRoot.*/DocumentRoot \/var\/www\/html\/public/g" /etc/apache2/sites-available/000-default.conf && \
-	sed -i "s/<\/VirtualHost>/\t<Directory \"\/var\/www\/html\/public\">\n\t\tAllowOverride All\n\t<\/Directory>\n<\/VirtualHost>/g" /etc/apache2/sites-available/000-default.conf && \
+	sed -i "s/<\/VirtualHost>/\t<Directory \"\/var\/www\/html\/public\">\n\t\tAllowOverride All\n\t<\/Directory>\n<\/VirtualHost>/g" /etc/apache2/sites-available/000-default.conf
 	
 ENV LANG zh_TW.UTF-8  
 ENV LANGUAGE zh_TW
